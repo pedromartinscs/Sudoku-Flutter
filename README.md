@@ -1,4 +1,8 @@
 # Sudoku Puzzle App (Flutter)
+> ⚙️ Developed entirely by Pedro Martins Costa de Souza — game programmer with experience in .NET, Python, AWS, Docker, and game systems.  
+> 🚀 Currently open to remote opportunities in game development (full-time or freelance).  
+> 📫 Contact: pedro@nancode.com.br | [LinkedIn](https://www.linkedin.com/in/pedromartinscosta/) | [Portfolio](https://github.com/pedromartinscs)
+
 
 A lightweight and fully functional Sudoku puzzle game built in Flutter.
 
