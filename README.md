@@ -33,7 +33,9 @@ flutter build apk --release
 - `/build` — (ignored via .gitignore)
 
 ## 📸 Screenshots
-*(You can insert emulator screenshots here)*
+
+### Gameplay
+![Sudoku Demo](screenshots/sudoku_demo.png)
 
 ---
 
