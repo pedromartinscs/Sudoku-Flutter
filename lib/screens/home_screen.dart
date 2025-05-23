@@ -84,6 +84,14 @@ class _HomeScreenState extends State<HomeScreen> {
     });
   }
 
+  void resetBoard() {
+    setState(() {
+      board = initialBoard.map((row) => List<int>.from(row)).toList();
+      selectedRow = -1;
+      selectedCol = -1;
+    });
+  }
+
   bool isBoardCompleteAndCorrect() {
     for (int row = 0; row < 9; row++) {
       for (int col = 0; col < 9; col++) {
@@ -99,19 +107,26 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Sudoku Puzzle')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          SudokuGrid(
-            board: board,
-            solutionBoard: solutionBoard,
-            selectedRow: selectedRow,
-            selectedCol: selectedCol,
-            onTileTap: onTileTap,
-          ),
-          const SizedBox(height: 16),
-          NumberPad(onNumberTap: onNumberTap),
-        ],
+      body: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SudokuGrid(
+              board: board,
+              solutionBoard: solutionBoard,
+              selectedRow: selectedRow,
+              selectedCol: selectedCol,
+              onTileTap: onTileTap,
+            ),
+            const SizedBox(height: 16),
+            NumberPad(onNumberTap: onNumberTap),
+            const SizedBox(height: 16),
+            ElevatedButton(
+              onPressed: resetBoard,
+              child: const Text('Reset Puzzle'),
+            ),
+          ],
+        ),
       ),
     );
   }
